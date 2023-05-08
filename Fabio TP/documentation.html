@@ -35,9 +35,31 @@
     </div>
     
     <div class="comp" id="section">
-        <h2>Section 2</h2>
-        <p class="maintxt2">Contenu de la section 2</p>
-      </div>
+        <h2 class="ma">Documentation Technique :</h2>
+        <p class="maintxt2">Bienvenue dans cette documentation technique décrivant notre architecture réseau. Nous avons créé un réseau sécurisé et bien organisé qui utilise des machines virtuelles (VM) pour offrir des services à nos clients. Nous avons utilisé le logiciel VMware pour créer des VM qui nous permettent de mieux gérer nos ressources matérielles et de protéger notre réseau contre les attaques potentielles.</p>
+        <p class="maintxt2">Notre réseau est composé de deux VM pour les clients, une sous Windows et une sous Linux. Nous avons également mis en place un serveur Linux dédié à l'hébergement de notre site web, ainsi qu'un autre serveur Linux dédié à la sauvegarde de notre site web. Nous avons également installé un pare-feu pour renforcer la sécurité de notre réseau.</p>
+        <p class="maintxt2">Dans cette documentation, nous allons décrire en détail notre architecture réseau, y compris le plan d'adressage que nous avons mis en place, les différentes machines que nous avons créées et les services qu'elles offrent, ainsi que les mesures de sécurité que nous avons mises en place pour protéger notre réseau et nos données.</p>
+        <p class="maintxt2">Pour mettre en place un environnement de test pour le réseau, nous avons utilisé VMware, qui nous permet de simuler plusieurs machines virtuelles sur un même ordinateur. Pour le pare-feu, nous avons choisi pfsense, un logiciel open source qui offre des fonctionnalités de sécurité avancées pour notre réseau.</p>
+        <p class="maintxt2">Notre serveur web fonctionne sur un système Linux et utilise Apache, un serveur web populaire et performant, pour servir les pages web.</p>
+        <p class="maintxt2">Pour copier les fichiers de notre site web sur le serveur web, nous avons utilisé la commande scp, qui nous permet de transférer des fichiers et des dossiers en utilisant SSH. Cette méthode de transfert de fichiers est sécurisée et permet de copier rapidement des fichiers sur le serveur.</p>
+        <p class="maintxt3">Voici notre maquette réseau :</p>
+    	<img class="img" src="/images/image.png" alt="img">
+		<p class="maintxt2">Pour mieux organiser notre réseau, nous avons créé deux sous-réseaux à l'aide de pfsense. Le premier est un réseau local (LAN) qui connecte tous nos clients et le second est une zone démilitarisée (DMZ) qui contient tous nos serveurs. La DMZ est séparée du LAN par un pare-feu pour renforcer la sécurité de notre réseau.</p>
+		<p class="maintxt2">Notre serveur web est installé dans la DMZ et est accessible depuis le WAN grâce à une redirection de port configurée sur notre pare-feu. Cette configuration permet aux utilisateurs externes d'accéder à notre site web tout en protégeant le reste de notre réseau des attaques potentielles.</p>
+		<p class="maintxt2">En résumé, nous avons créé une infrastructure de réseau sécurisée et bien organisée avec deux sous-réseaux distincts, chacun avec un but spécifique. Cette architecture nous permet de mieux protéger notre réseau et de fournir des services efficaces à nos clients.</p>
+		<p class="maintxt3">Pour notre plan d'adressage,</p>
+		<p class="maintxt2">Nous avons créé deux sous-réseaux distincts. Le premier est la DMZ (zone démilitarisée), destiné à héberger tous nos serveurs. Voici les détails du plan d'adressage de ce sous-réseau :</p>
+		<p class="maintxt4">- Adresse réseau : 192.168.3.0</p>
+		<p class="maintxt4">- Masque de sous-réseau : 255.255.255.0</p>
+		<p class="maintxt4">- Passerelle par défaut : 192.168.3.1</p>
+		<p class="maintxt4">- Adresses disponibles : 253</p>
+		<p class="maintxt2">Le deuxième sous-réseau est le LAN, destiné à connecter tous nos clients. Voici les détails du plan d'adressage de ce sous-réseau :
+			<p class="maintxt4">- Adresse réseau : 192.168.2.0</p>
+			<p class="maintxt4">- Masque de sous-réseau : 255.255.255.0</p>
+			<p class="maintxt4">- Passerelle par défaut : 192.168.2.1</p>
+			<p class="maintxt4">- Adresses disponibles : 253</p>
+		</div>
+	
 	<footer>
 		<p>2023 - Projet réalisé par Matt Crayston et Théo Colliot-Martinez</p>
 	</footer>
